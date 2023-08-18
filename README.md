@@ -1,11 +1,11 @@
-About jupyter-vscode-proxy
-==========================
+About jupyter-vscode-proxy-feedstock
+====================================
+
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/jupyter-vscode-proxy-feedstock/blob/main/LICENSE.txt)
 
 Home: https://github.com/betatim/vscode-binder
 
 Package license: BSD-3-Clause
-
-Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/jupyter-vscode-proxy-feedstock/blob/main/LICENSE.txt)
 
 Summary: VS Code extension for Jupyter
 
