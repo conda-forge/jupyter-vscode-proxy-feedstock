@@ -10,23 +10,24 @@ source:
   sha256: 60d365b608bb74d72695365e27a330469db73e58d863defb08c9d14fcd0d82d7
 
 build:
-  number: 0
+  number: 1
   noarch: python
   script: "{{ PYTHON }} -m pip install . -vv"
 
 requirements:
   host:
     - pip
-    - python >=3
+    - python {{ python_min }}
     - setuptools
   run:
-    - python >=3
+    - python >={{ python_min }}
     - jupyter-server-proxy
     - setuptools
 
 test:
   requires:
     - pip
+    - python {{ python_min }}
   commands:
     - pip check
   imports:
