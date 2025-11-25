@@ -1,5 +1,5 @@
 {% set name = "jupyter-vscode-proxy" %}
-{% set version = "0.6" %}
+{% set version = "0.7" %}
 
 package:
   name: "{{ name|lower }}"
@@ -7,10 +7,10 @@ package:
 
 source:
   url: "https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name.replace('-', '_') }}-{{ version }}.tar.gz"
-  sha256: 60d365b608bb74d72695365e27a330469db73e58d863defb08c9d14fcd0d82d7
+  sha256: fb95d0762fb35bd1650371dc912a3b45b7a9262ff93b50ff7aa4de61b79e6a0b
 
 build:
-  number: 1
+  number: 0
   noarch: python
   script: "{{ PYTHON }} -m pip install . -vv"
 
