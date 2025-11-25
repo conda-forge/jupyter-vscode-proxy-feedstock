@@ -1,0 +1,44 @@
+schema_version: 1
+
+context:
+  name: jupyter-vscode-proxy
+  version: 0.7
+
+package:
+  name: ${{ name|lower }}
+  version: ${{ version }}
+
+source:
+  url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/${{ name | replace('-', '_') }}-${{ version }}.tar.gz
+  sha256: fb95d0762fb35bd1650371dc912a3b45b7a9262ff93b50ff7aa4de61b79e6a0b
+
+build:
+  number: 0
+  noarch: python
+  script: ${{ PYTHON }} -m pip install . -vv
+
+requirements:
+  host:
+    - pip
+    - python ${{ python_min }}.*
+    - setuptools
+  run:
+    - python >=${{ python_min }}
+    - jupyter-server-proxy
+    - setuptools
+
+tests:
+  - python:
+      python_version: ${{ python_min }}.*
+      imports:
+        - jupyter_vscode_proxy
+
+about:
+  license: BSD-3-Clause
+  license_file: LICENSE
+  summary: VS Code extension for Jupyter
+  homepage: https://github.com/betatim/vscode-binder
+
+extra:
+  recipe-maintainers:
+    - xhochy
